@@ -1,0 +1,27 @@
+<project name="Homework 'inventory' project" default="dist">
+    <property name="src.dir" value="src"/>
+    <property name="dist.dir" value="dist"/>
+    <property name="build.base.dir" value="build"/>
+    <property name="build.dir" value="${build.base.dir}/class"/>
+    <property name="dist.file" value="${dist.dir}/inventory.jar"/>
+    <target name="build"
+            description="build program">
+        <mkdir dir="${build.dir}"/>
+        <javac destdir="${build.dir}">
+            <src path="${src.dir}"/>
+        </javac>
+    </target>
+    <target name="dist" depends="build"
+            description="make jar">
+        <mkdir dir="${build.dir}"/>
+        <jar destfile="${dist.file}" basedir="${build.dir}">
+            <manifest>
+                <attribute name="Main-Class" value="com.hs.inventory.Main"/>
+            </manifest>
+        </jar>
+    </target>
+    <target name="clean" description="clean all">
+        <delete dir="${build.base.dir}"/>
+        <delete dir="${dist.dir}"/>
+    </target>
+</project>

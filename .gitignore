@@ -1,0 +1,13 @@
+*.class
+
+# Package Files #
+*.jar
+
+build/
+dist/
+out/
+
+.idea/
+
+*.iml
+*.dat
