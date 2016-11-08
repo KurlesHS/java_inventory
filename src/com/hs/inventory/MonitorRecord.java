@@ -1,6 +1,6 @@
 package com.hs.inventory;
 
-public class MonitorRecord extends Record {
+class MonitorRecord extends Record {
     enum Kind {
         Tube,
         Lcd,

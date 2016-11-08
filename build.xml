@@ -7,7 +7,7 @@
     <target name="build"
             description="build program">
         <mkdir dir="${build.dir}"/>
-        <javac destdir="${build.dir}">
+        <javac includeantruntime="false" destdir="${build.dir}">
             <src path="${src.dir}"/>
         </javac>
     </target>

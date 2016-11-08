@@ -5,7 +5,7 @@ class PrinterRecord extends Record {
     private boolean isNetwork;
     private boolean isColor;
 
-    public void setNetwork(boolean network) {
+    void setNetwork(boolean network) {
         isNetwork = network;
     }
 
