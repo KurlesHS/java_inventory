@@ -84,9 +84,13 @@ class MainHandler {
 
     private void handleListCommand() {
         Collection<Record> allRecords = repository.getAllRecords();
-        System.out.println("Список оборудования:");
-        for (Record record : allRecords) {
-            System.out.println(String.format("   %d - %s", record.getSku(), record.toString()));
+        if (allRecords.size() > 0) {
+            System.out.println("Список оборудования:");
+            for (Record record : allRecords) {
+                System.out.println(String.format("   %d - %s", record.getSku(), record.toString()));
+            }
+        } else {
+            System.out.println("БД не содержит записей");
         }
     }
 }
