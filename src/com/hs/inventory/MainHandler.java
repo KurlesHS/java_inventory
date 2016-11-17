@@ -11,7 +11,12 @@ class MainHandler {
         this.repository = repository;
     }
 
-    void addCreator(IRecordCreator creator) {
+    public void setCreator(IRecordCreator creator)
+    {
+        addCreator(creator);
+    }
+
+    public void addCreator(IRecordCreator creator) {
         recordCreators.put(creator.name(), creator);
     }
 

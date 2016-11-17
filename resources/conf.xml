@@ -1,0 +1,23 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+    <bean id="monitorRecordCreator" class="com.hs.inventory.MonitorRecordCreator"/>
+    <bean id="printerRecordCreator" class="com.hs.inventory.PrinterRecordCreator"/>
+    <bean id="scannerRecordCreator" class="com.hs.inventory.ScannerRecordCreator"/>
+    <bean id="repository" class="com.hs.inventory.FileRepository"/>
+
+    <bean id="mainHandler" class="com.hs.inventory.MainHandler">
+        <constructor-arg index="0" ref="repository"/>
+    </bean>
+
+    <bean id="creators" class="java.util.ArrayList">
+        <constructor-arg index="0">
+            <list>
+                <ref bean="monitorRecordCreator"/>
+                <ref bean="printerRecordCreator"/>
+                <ref bean="scannerRecordCreator"/>
+            </list>
+        </constructor-arg>
+    </bean>
+</beans>

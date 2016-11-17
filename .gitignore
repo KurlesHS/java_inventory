@@ -3,9 +3,12 @@
 # Package Files #
 *.jar
 
+target/
 build/
 dist/
 out/
+
+dependency-reduced-pom.xml
 
 .idea/
 
