@@ -82,8 +82,7 @@
                             <goal>shade</goal>
                         </goals>
                         <configuration>
-                            <outputDirectory>dist</outputDirectory>
-                            <finalName>${project.artifactId}-${project.version}</finalName>
+                                <outputFile>dist/${project.artifactId}-${project.version}-shaded.jar</outputFile>
                             <transformers>
                                 <!-- =================================================== -->
                                 <!--  define the main entry for the output jar file      -->
